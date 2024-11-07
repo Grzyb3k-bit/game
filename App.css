@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.gamebox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 600px;
+  height: 600px;
+}
+button {
+  cursor: pointer;
+  width: 280px;
+  height: 280px;
+  border: none;
+}
+.start {
+  color: whitesmoke;
+  font-size: 32px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #252525;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.red {
+  background-color: crimson;
+  color: crimson;
+}
+.blue {
+  background-color: rgb(49, 49, 244);
+  color: rgb(49, 49, 244);
+}
+.green {
+  background-color: rgb(12, 228, 12);
+  color: rgb(12, 228, 12);
+}
+.yellow {
+  color: yellow;
+  background-color: yellow;
+}
+
+.active {
+  box-shadow: 0 0 100px currentColor; /* lub inny kolor wyróżniający */
+}
+.level {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  background-color: rgb(79, 73, 73);
+  color: #fff;
+  opacity: 0.4;
+  border-radius: 24px;
+  transition: opacity 0.5s ease-in;
+}
+.level:hover {
+  opacity: 1;
+}
+.rest_btn:hover {
+  opacity: 1;
+}
+
+.rest_btn {
+  color: #fff;
+  opacity: 0.4;
+  border-radius: 24px;
+  transition: opacity 0.2s ease-in;
+  background-color: rgb(79, 73, 73);
+  height: 28px;
+  width: 10%;
+}
+.info {
+  padding: 8px;
+  font-size: 24px;
+  width: 90%;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+}
+.wins {
+  top: 0;
+  opacity: 0;
+  left: 0;
+  display: inline-block;
+  position: absolute;
+  animation: win 2s ease-in-out normal;
+}
+.lose {
+  top: 0;
+  right: 0;
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  animation: lose 2s ease-in-out normal;
+}
+@keyframes lose {
+  0% {
+    right: 0;
+    opacity: 0;
+  }
+  50% {
+    right: 25%;
+    opacity: 1;
+  }
+  100% {
+    right: 100;
+    opacity: 0;
+  }
+}
+
+@keyframes win {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  50% {
+    left: 25%;
+    opacity: 1;
+  }
+  100% {
+    left: 100;
+    opacity: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .gamebox {
+    width: 520px;
+    height: 520px;
+  }
+  button {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .gamebox {
+    width: 320px;
+    height: 320px;
+  }
+  button {
+    width: 150px;
+    height: 150px;
+  }
+}
